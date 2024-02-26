@@ -9,10 +9,10 @@ pub fn convert(body: String, title: String, current_relative_path: String, main_
     let mut output = String::new();
 
     for line in body.lines() {
-        let frac = fractions(line.to_string());
+        let line = link(line.to_string(), all_possible_file_links.clone(), main_file.clone());
+        let frac = fractions(line);
         let html = html(frac);
-        let link = link(html, all_possible_file_links.clone(), main_file.clone());
-        let open_close = open_close(link);
+        let open_close = open_close(html);
 
         // to new line
         output += open_close.as_str();
