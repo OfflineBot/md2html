@@ -2,6 +2,7 @@
 fn find_file(name: String, all_files: Vec<String>) -> String {
     for i in all_files.iter() {
         if i.contains(&name) {
+            println!("found: {}", name);
             return i.to_owned();
         }
     }
