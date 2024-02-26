@@ -1,4 +1,5 @@
 
+#[allow(unused)]
 fn replace_item(mut line: String, from: &str, to: &str) -> String {
 
     line += from;
@@ -21,6 +22,7 @@ fn replace_item(mut line: String, from: &str, to: &str) -> String {
 
 }
 
+#[allow(unused)]
 pub fn open_close(line: String) -> String {
 
     let list = vec![

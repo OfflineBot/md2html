@@ -1,6 +1,9 @@
-use super::{fractions, html, open_close};
 
-pub fn convert(body: String) -> String {
+use super::{fractions, html, html_template, open_close};
+
+#[allow(unused)]
+// convert file to html
+pub fn convert(body: String, title: String, current_relative_path: String) -> String {
     let mut output = String::new();
 
     for line in body.lines() {
@@ -13,5 +16,14 @@ pub fn convert(body: String) -> String {
         output += "\n";
     }
 
+    let back_route_points = current_relative_path.split("/").collect::<Vec<&str>>().len() - 1;
+    let mut back_route = String::new();
+    back_route += "./";
+    for _ in 0..back_route_points {
+        back_route += "../";
+    }
+
+    output = html_template(back_route, title, output);
     output
 }
+

@@ -1,4 +1,5 @@
 
+#[allow(unused)]
 pub fn html(line: String) -> String {
 
     let options = vec![
