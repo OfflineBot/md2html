@@ -17,6 +17,7 @@ pub fn link(line: String, all_files: Vec<String>) -> String {
     let mut output = String::new();
     for item in split.iter() {
         let new_split = item.split("[[").collect::<Vec<&str>>();
+        if new_split.len() == 1 {continue;}
         let names = new_split[1].split("|").collect::<Vec<&str>>();
 
         let location = names[0];
