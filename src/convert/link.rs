@@ -8,7 +8,7 @@ fn find_file(name: String, all_files: Vec<String>) -> String {
     name
 }
 
-pub fn link(line: String, all_files: Vec<String>) -> String {
+pub fn link(line: String, all_files: Vec<String>, main_path: String) -> String {
     if !line.contains("]]") { return line; }
 
     let split = line.split("]]").collect::<Vec<&str>>();
@@ -20,7 +20,8 @@ pub fn link(line: String, all_files: Vec<String>) -> String {
         let names = new_split[1].split("|").collect::<Vec<&str>>();
 
         let location = names[0];
-        let location_new = find_file(names[0].to_string(), all_files.clone());
+        let mut location_new = find_file(names[0].to_string(), all_files.clone());
+        location_new = location_new.replace(&main_path, "");
         let location_split = location_new.split("/").collect::<Vec<&str>>();
         let location_path_points = location_split.len();
 

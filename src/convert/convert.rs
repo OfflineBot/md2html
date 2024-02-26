@@ -4,14 +4,14 @@ use crate::Settings;
 
 #[allow(unused)]
 // convert file to html
-pub fn convert(body: String, title: String, current_relative_path: String, settings: Settings, all_possible_file_links: Vec<String>) -> String {
+pub fn convert(body: String, title: String, current_relative_path: String, main_file: String, settings: Settings, all_possible_file_links: Vec<String>) -> String {
     println!("settings not implemented yet");
     let mut output = String::new();
 
     for line in body.lines() {
         let frac = fractions(line.to_string());
         let html = html(frac);
-        let link = link(html, all_possible_file_links.clone());
+        let link = link(html, all_possible_file_links.clone(), main_file.clone());
         let open_close = open_close(link);
 
         // to new line
