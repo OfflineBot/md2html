@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "md_to_html"
+name = "ob2web"
 version = "0.1.0"

@@ -5,13 +5,16 @@ use convert::{
     html, open_close,
 };
 
-use std::io::{Result, Write};
+mod files;
+use files::write_file;
+
+mod input;
+
+mod storage;
+
+use std::io::Result;
 use std::{fs, io::Read};
 
-fn write(body: String) {
-    let mut file = std::fs::File::create("./index.html").unwrap();
-    file.write_all(body.as_bytes()).unwrap();
-}
 
 fn convert(body: String) -> String {
     let mut output = String::new();
@@ -36,6 +39,6 @@ fn main() -> Result<()> {
 
     let output = convert(test_file);
 
-    write(output);
+    write_file("./index.html", output)?;
     Ok(())
 }
