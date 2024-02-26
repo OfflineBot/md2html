@@ -19,7 +19,7 @@ pub fn convert(body: String, title: String, current_relative_path: String, setti
         output += "\n";
     }
 
-    let back_route_points = current_relative_path.split("/").collect::<Vec<&str>>().len() - 1;
+    let back_route_points = current_relative_path.split("/").collect::<Vec<&str>>().len() - 2;
     let mut back_route = String::new();
     back_route += "./";
     for _ in 0..back_route_points {
