@@ -21,6 +21,7 @@ pub fn link(line: String, all_files: Vec<String>, main_path: String) -> String {
 
         let location = names[0];
         let mut location_new = find_file(names[0].to_string(), all_files.clone());
+        println!("location_new: {}\nmain_path: {}", location_new, main_path);
         location_new = location_new.replace(&main_path, "");
         let location_split = location_new.split("/").collect::<Vec<&str>>();
         let location_path_points = location_split.len();
@@ -34,6 +35,5 @@ pub fn link(line: String, all_files: Vec<String>, main_path: String) -> String {
 
         output += format!("{}<a href=\"{}{}\">{}</a>", new_split[0], from_main, location, name).as_str();
     }
-    println!("link_line: {}", output);
     output
 }
