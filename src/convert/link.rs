@@ -12,6 +12,7 @@ pub fn link(line: String, all_files: Vec<String>) -> String {
     if !line.contains("]]") { return line; }
 
     let split = line.split("]]").collect::<Vec<&str>>();
+    println!("line: {}", line);
 
     let mut output = String::new();
     for item in split.iter() {
