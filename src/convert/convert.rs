@@ -1,9 +1,11 @@
 
 use super::{fractions, html, html_template, open_close, link};
+use crate::Settings;
 
 #[allow(unused)]
 // convert file to html
-pub fn convert(body: String, title: String, current_relative_path: String) -> String {
+pub fn convert(body: String, title: String, current_relative_path: String, settings: Settings) -> String {
+    println!("settings not implemented yet");
     let mut output = String::new();
 
     for line in body.lines() {
