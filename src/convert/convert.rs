@@ -1,5 +1,5 @@
 
-use super::{fractions, html, html_template, open_close};
+use super::{fractions, html, html_template, open_close, link};
 
 #[allow(unused)]
 // convert file to html
@@ -9,7 +9,8 @@ pub fn convert(body: String, title: String, current_relative_path: String) -> St
     for line in body.lines() {
         let frac = fractions(line.to_string());
         let html = html(frac);
-        let open_close = open_close(html);
+        let link = link(html);
+        let open_close = open_close(link);
 
         // to new line
         output += open_close.as_str();

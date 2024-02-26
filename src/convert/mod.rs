@@ -13,5 +13,8 @@ pub use html_template::html_template;
 mod html;
 pub use html::html;
 
+mod link;
+pub use link::link;
+
 mod open_close;
 pub use open_close::open_close;
