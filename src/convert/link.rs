@@ -23,7 +23,7 @@ pub fn link(line: String, all_files: Vec<String>, main_path: String) -> String {
         let mut location_new = find_file(names[0].to_string(), all_files.clone());
         location_new = location_new.replace(&main_path, "");
         let location_split = location_new.split("/").collect::<Vec<&str>>();
-        let location_path_points = location_split.len() - 2;
+        let location_path_points = location_split.len();
 
         let mut from_main = String::from("./");
         for _ in 0..location_path_points {
