@@ -1,3 +1,5 @@
+mod convert;
+pub use convert::convert;
 
 mod fraction;
 pub use fraction::fractions;
