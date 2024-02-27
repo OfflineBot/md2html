@@ -1,5 +1,6 @@
 
 
+#[derive(Debug, Clone)]
 pub struct Settings {
     pub html_change: Vec<[String; 2]>,
     pub replace_by: Vec<[String; 2]>,
@@ -32,6 +33,7 @@ impl Settings {
         settings.add_replacement(["\\Delta".to_string(), "∆".to_string()]);
         settings.add_replacement(["$\\Sigma$".to_string(), "∑".to_string()]);
         settings.add_replacement(["\\Sigma".to_string(), "∑".to_string()]);
+        settings.add_replacement(["\\[".to_string(), "[".to_string()]);
 
         settings
     }

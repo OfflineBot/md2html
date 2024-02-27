@@ -1,5 +1,5 @@
 
-use super::{fractions, html, html_template, open_close, link};
+use super::{fractions, html, html_template, open_close, link, replace_by};
 use crate::Settings;
 
 #[allow(unused)]
@@ -13,6 +13,7 @@ pub fn convert(body: String, title: String, current_relative_path: String, main_
         out_line = fractions(out_line);
         out_line = html(out_line, &settings);
         out_line = open_close(out_line, &settings);
+        out_line = replace_by(out_line, &settings);
 
         // to new line
         output += out_line.as_str();

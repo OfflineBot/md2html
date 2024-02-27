@@ -27,7 +27,7 @@ fn replace_item(mut line: String, from: &str, to: &str) -> String {
 #[allow(unused)]
 pub fn open_close(line: String, settings: &Settings) -> String {
 
-    let list = settings.replace_by.clone(); 
+    let list = settings.start_end_case.clone(); 
 
     let mut output = line.clone();
 
