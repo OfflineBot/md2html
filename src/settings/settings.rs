@@ -30,6 +30,8 @@ impl Settings {
 
         settings.add_replacement(["$\\Delta$".to_string(), "--- todo ---".to_string()]);
         settings.add_replacement(["$\\Sigma$".to_string(), "--- todo ---".to_string()]);
+        settings.add_replacement(["\\Delta".to_string(), "--- todo ---".to_string()]);
+        settings.add_replacement(["\\Sigma".to_string(), "--- todo ---".to_string()]);
 
         settings
     }

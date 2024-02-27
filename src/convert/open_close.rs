@@ -1,3 +1,5 @@
+use crate::Settings;
+
 
 #[allow(unused)]
 fn replace_item(mut line: String, from: &str, to: &str) -> String {
@@ -23,18 +25,15 @@ fn replace_item(mut line: String, from: &str, to: &str) -> String {
 }
 
 #[allow(unused)]
-pub fn open_close(line: String) -> String {
+pub fn open_close(line: String, settings: &Settings) -> String {
 
-    let list = vec![
-        ["**", "bold"],
-        ["__", "bold"],
-    ];
+    let list = settings.replace_by.clone(); 
 
     let mut output = line.clone();
 
     for i in list.iter() {
-        if output.contains(i[0]) {
-            output = replace_item(line.clone(), i[0], i[1]);
+        if output.contains(&i[0]) {
+            output = replace_item(line.clone(), &i[0], &i[1]);
         }
     }     
 

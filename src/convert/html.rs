@@ -1,17 +1,10 @@
+use crate::Settings;
+
 
 #[allow(unused)]
-pub fn html(line: String) -> String {
+pub fn html(line: String, settings: &Settings) -> String {
 
-    let options = vec![
-        ["#", "h1"],
-        ["##", "h2"],
-        ["###", "h3"],
-        ["####", "h4"],
-        ["#####", "h5"],
-        ["######", "h6"],
-        ["-", "li"],
-        ["+", "li"],
-    ];
+    let options = settings.html_change.clone();
 
     let mut data = line.split_whitespace().collect::<Vec<&str>>();
     if data.len() <= 1 {
