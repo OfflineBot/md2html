@@ -13,18 +13,24 @@ pub fn html(line: String) -> String {
         ["+", "li"],
     ];
 
-    let mut output = line.clone();
-    let data = line.split_whitespace().collect::<Vec<&str>>();
+    let mut data = line.split_whitespace().collect::<Vec<&str>>();
     if data.len() <= 1 {
-        if output.trim().is_empty() {
+        if line.trim().is_empty() {
             return "<br>".to_string();
         }
-        return format!("<p>{} </p>", output);
+        return format!("<p>{}</p>", line);
     }
+    let first_val = data[0];
+    data.remove(0);
+    println!("data: {:?}", data);
+    let mut combined_data = data.join(" ");
+    println!("combined_data: {}", combined_data);
 
+    let mut output = "".to_string();
     for i in options.iter() {
-        if i[0] == data[0] {
-            output = output.replace(i[0], format!("<{}>", i[1]).as_str());
+        if i[0] == first_val {
+            output += format!("<{}>", i[1]).as_str();
+            output += combined_data.as_str();
             output += format!(" </{}>", i[1]).as_str();
         }
     }
