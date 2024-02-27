@@ -22,9 +22,7 @@ pub fn html(line: String) -> String {
     }
     let first_val = data[0];
     data.remove(0);
-    println!("data: {:?}", data);
     let mut combined_data = data.join(" ");
-    println!("combined_data: {}", combined_data);
 
     let mut output = "".to_string();
     for i in options.iter() {
