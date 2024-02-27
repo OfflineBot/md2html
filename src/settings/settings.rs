@@ -28,10 +28,10 @@ impl Settings {
         settings.add_start_end(["**".to_string(), "bold".to_string()]);
         settings.add_start_end(["__".to_string(), "bold".to_string()]);
 
-        settings.add_replacement(["$\\Delta$".to_string(), "--- todo ---".to_string()]);
-        settings.add_replacement(["$\\Sigma$".to_string(), "--- todo ---".to_string()]);
-        settings.add_replacement(["\\Delta".to_string(), "--- todo ---".to_string()]);
-        settings.add_replacement(["\\Sigma".to_string(), "--- todo ---".to_string()]);
+        settings.add_replacement(["$\\Delta$".to_string(), "∆".to_string()]);
+        settings.add_replacement(["\\Delta".to_string(), "∆".to_string()]);
+        settings.add_replacement(["$\\Sigma$".to_string(), "∑".to_string()]);
+        settings.add_replacement(["\\Sigma".to_string(), "∑".to_string()]);
 
         settings
     }
