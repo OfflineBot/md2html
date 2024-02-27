@@ -13,11 +13,13 @@ pub fn html_template(back_route: String, title: String, body: String) -> String 
     <title>{}</title>
 </head>
 <body>
+    <h1>{}</h1>
     {} 
 </body>
 </html>
     ",
         back_route,
+        title,
         title,
         body
     )
