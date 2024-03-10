@@ -1,7 +1,6 @@
 
 #[allow(unused)]
 pub fn html_template(back_route: String, title: String, body: String) -> String {
-
     format!(
     "
 <!DOCTYPE html>
@@ -10,6 +9,7 @@ pub fn html_template(back_route: String, title: String, body: String) -> String 
     <meta charset=\"UTF-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
     <link rel=\"stylesheet\" href=\"{}css/styles.css\">
+    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML\"></script>
     <title>{}</title>
 </head>
 <body>
