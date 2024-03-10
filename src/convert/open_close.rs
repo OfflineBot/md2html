@@ -11,10 +11,10 @@ fn replace_item(mut line: String, from: &str, to: &str) -> String {
     let mut counter = 0;
     for i in split.iter() {
         if counter % 2 == 0 {
-            output += format!("{}<{}>", i, to).as_str();
+            output += format!("{}{}", i, from).as_str();
             counter += 1;
         } else {
-            output += format!("{}</{}>", i, to).as_str();
+            output += format!("{}{}", i, to).as_str();
             counter += 1;
         }
     }
@@ -33,7 +33,7 @@ pub fn open_close(line: String, settings: &Settings) -> String {
 
     for i in list.iter() {
         if output.contains(&i[0]) {
-            output = replace_item(line.clone(), &i[0], &i[1]);
+            output = replace_item(line.clone(), &i[1], &i[2]);
         }
     }     
 
