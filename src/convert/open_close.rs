@@ -37,7 +37,6 @@ pub fn open_close(line: String, settings: &Settings, row: usize) -> String {
 
     for i in list.iter() {
         if output.contains(&i[0]) {
-            println!("found: {}", i[0]);
             output = replace_item(line.clone(), &i[0], &i[1], &i[2]);
         }
     }     
