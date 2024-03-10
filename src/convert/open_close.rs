@@ -31,7 +31,7 @@ pub fn open_close(line: String, settings: &Settings, row: usize) -> String {
         0 => settings.start_end_case.clone(),
         1 => settings.start_end_second.clone(),
         _ => settings.start_end_case.clone(),
-    }
+    };
 
     let mut output = line.clone();
 

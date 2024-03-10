@@ -5,7 +5,7 @@ pub struct Settings {
     pub html_change: Vec<[String; 2]>,
     pub replace_by: Vec<[String; 2]>,
     pub start_end_case: Vec<[String; 3]>,
-    pub start_end_second: Vec<[String; 3]
+    pub start_end_second: Vec<[String; 3]>,
 }
 
 impl Settings {
