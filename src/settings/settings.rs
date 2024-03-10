@@ -4,7 +4,7 @@
 pub struct Settings {
     pub html_change: Vec<[String; 2]>,
     pub replace_by: Vec<[String; 2]>,
-    pub start_end_case: Vec<[String; 2]>
+    pub start_end_case: Vec<[String; 3]>
 }
 
 impl Settings {
@@ -26,8 +26,9 @@ impl Settings {
         settings.add_html_change(["#####".to_string(), "h5".to_string()]);
         settings.add_html_change(["######".to_string(), "h6".to_string()]);
 
-        settings.add_start_end(["**".to_string(), "bold".to_string()]);
-        settings.add_start_end(["__".to_string(), "bold".to_string()]);
+        settings.add_start_end(["**".to_string(), "<bold>".to_string(), "</bold>".to_string()]);
+        settings.add_start_end(["__".to_string(), "<bold>".to_string(), "</bold>".to_string()]);
+        settings.add_start_end(["$".to_string(), "\\(".to_string(), "\\)".to_string()]);
 
         //settings.add_replacement(["$\\Delta$".to_string(), "∆".to_string()]);
         //settings.add_replacement(["\\Delta".to_string(), "∆".to_string()]);
@@ -49,7 +50,7 @@ impl Settings {
     }
 
     #[allow(unused)]
-    pub fn add_start_end(&mut self, data: [String; 2]) {
+    pub fn add_start_end(&mut self, data: [String; 3]) {
         self.start_end_case.push(data);
     }
 }
