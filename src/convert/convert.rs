@@ -12,7 +12,8 @@ pub fn convert(body: String, title: String, current_relative_path: String, main_
         out_line = link(out_line, all_possible_file_links.clone(), main_file.clone(), current_relative_path.clone());
         //out_line = fractions(out_line);
         out_line = html(out_line, &settings);
-        out_line = open_close(out_line, &settings);
+        out_line = open_close(out_line, &settings, 0);
+        out_line = open_close(out_line, &settings, 1);
         out_line = replace_by(out_line, &settings);
 
         // to new line

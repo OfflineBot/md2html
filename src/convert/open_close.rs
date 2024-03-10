@@ -25,9 +25,13 @@ fn replace_item(mut line: String, key: &str, from: &str, to: &str) -> String {
 }
 
 #[allow(unused)]
-pub fn open_close(line: String, settings: &Settings) -> String {
+pub fn open_close(line: String, settings: &Settings, row: usize) -> String {
 
-    let list = settings.start_end_case.clone(); 
+    let list = match row {
+        0 => settings.start_end_case.clone(),
+        1 => settings.start_end_second.clone(),
+        _ => settings.start_end_case.clone(),
+    }
 
     let mut output = line.clone();
 

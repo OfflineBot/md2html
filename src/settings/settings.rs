@@ -4,13 +4,14 @@
 pub struct Settings {
     pub html_change: Vec<[String; 2]>,
     pub replace_by: Vec<[String; 2]>,
-    pub start_end_case: Vec<[String; 3]>
+    pub start_end_case: Vec<[String; 3]>,
+    pub start_end_second: Vec<[String; 3]
 }
 
 impl Settings {
     #[allow(unused)]
     pub fn empty() -> Self {
-        Settings { html_change: Vec::new(), replace_by: Vec::new(), start_end_case: Vec::new() }
+        Settings { html_change: Vec::new(), replace_by: Vec::new(), start_end_case: Vec::new(), start_end_second: Vec::new() }
     } 
 
     #[allow(unused)]
@@ -28,7 +29,8 @@ impl Settings {
 
         settings.add_start_end(["**".to_string(), "<bold>".to_string(), "</bold>".to_string()]);
         settings.add_start_end(["__".to_string(), "<bold>".to_string(), "</bold>".to_string()]);
-        settings.add_start_end(["$".to_string(), "\\(".to_string(), "\\)".to_string()]);
+        settings.add_start_end_second(["$".to_string(), "\\(".to_string(), "\\)".to_string()]);
+
 
         //settings.add_replacement(["$\\Delta$".to_string(), "∆".to_string()]);
         //settings.add_replacement(["\\Delta".to_string(), "∆".to_string()]);
@@ -52,5 +54,10 @@ impl Settings {
     #[allow(unused)]
     pub fn add_start_end(&mut self, data: [String; 3]) {
         self.start_end_case.push(data);
+    }
+
+    #[allow(unused)]
+    pub fn add_start_end_second(&mut self, data: [String; 3]) {
+        self.start_end_second.push(data);
     }
 }
