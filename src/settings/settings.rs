@@ -29,6 +29,7 @@ impl Settings {
 
         settings.add_start_end(["**".to_string(), "<bold>".to_string(), "</bold>".to_string()]);
         settings.add_start_end(["__".to_string(), "<bold>".to_string(), "</bold>".to_string()]);
+        settings.add_start_end(["\\[".to_string(), "[".to_string(), "]".to_string()]);
         settings.add_start_end_second(["$".to_string(), "\\(".to_string(), "\\)".to_string()]);
 
 
