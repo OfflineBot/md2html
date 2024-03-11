@@ -18,7 +18,10 @@ pub fn link(line: String, all_files: Vec<String>, main_path: String, current_loc
     for item in split.iter() {
 
         let new_split = item.split("[[").collect::<Vec<&str>>();
-        if new_split.len() == 1 {continue;}
+        if new_split.len() == 1 {
+            output += new_split[0];
+            continue;
+        }
         let names = new_split[1].split("|").collect::<Vec<&str>>();
 
         let mut location_new = find_file(names[0].to_string(), all_files.clone(), main_path.clone());
